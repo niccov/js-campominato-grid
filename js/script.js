@@ -20,14 +20,10 @@ buttonElement.addEventListener("click", function() {
     //creo un ciclo FOR che mi crei una cella ogni giro
     for(i = 0; i < cellNumber; i++) {
 
-        //creo una variabile per un nuovo elemento div
-        let newElement = document.createElement("div");
-        //metto dentro il div la classe square già presente nel CSS
-        newElement.classList.add("square");
-        //inserire i numeri da 1 a 100
-        newElement.innerText = (i + 1);
-        
-        gridElement.append(newElement);
+        //creo una variabile con la function
+        let newSquareElement = createGrid(i + 1)
+        //appendo la variabile nel documento HTML
+        gridElement.append(newSquareElement);
     }
 
 })
@@ -37,14 +33,14 @@ buttonElement.addEventListener("click", function() {
 //__________________________________________________________
  //FUNZIONI 
 
-function createGrid(){
+function createGrid(text){
 
     //creo una variabile per un nuovo elemento div
     let newElement = document.createElement("div");
     //metto dentro il div la classe square già presente nel CSS
     newElement.classList.add("square");
     //inserisco del testo nell'elemento
-    //newElement.innerText = text;
+    newElement.innerText = text;
 
     return newElement;
 }                
