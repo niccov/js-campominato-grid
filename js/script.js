@@ -21,11 +21,17 @@ buttonElement.addEventListener("click", function() {
     for(i = 0; i < cellNumber; i++) {
 
         //creo una variabile con la function
-        let newSquareElement = createGrid(i + 1)
+        let newSquareElement = createSquare(i + 1)
         //appendo la variabile nel documento HTML
         gridElement.append(newSquareElement);
+
+        newSquareElement.addEventListener("click", function() {
+            newSquareElement.classList.add("blue");
+            console.log("La cella cliccata è la numero " + newSquareElement.innerText);
+        })
     }
 
+    
 })
 
 
@@ -33,7 +39,7 @@ buttonElement.addEventListener("click", function() {
 //__________________________________________________________
  //FUNZIONI 
 
-function createGrid(text){
+function createSquare(text){
 
     //creo una variabile per un nuovo elemento div
     let newElement = document.createElement("div");
